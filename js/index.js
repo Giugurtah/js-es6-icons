@@ -9,10 +9,10 @@ const printCards = (array, element) => {
     let auxString = "";
     array.forEach((item, index) => {
         //Per ogni oggetto nell'array controllo se è multiplo di 5 per aggiungere un offset
-        const offsetProperty = index % 5 == 0 ? "offset-md-1" : "";
+        const offsetProperty = index % 5 == 0 ? "offset-xl-1" : "";
         //e poi stampo il codice html della singola carta
         auxString += `
-        <div class="col-2 ${offsetProperty} gy-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 ${offsetProperty} gy-3">
             <div class="card">
                 <div class="card-body text-center">
                     <i class="${item.family} ${item.prefix}${item.name} color-${item.type}"></i>
