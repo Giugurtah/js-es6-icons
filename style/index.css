@@ -1,0 +1,35 @@
+/* Color properties */
+.light-blue {
+    color: rgb(50, 175, 216);
+}
+
+.bg-lightblue {
+    background-color: rgb(50, 175, 216);
+}
+
+.bg-lightgray {
+    background-color: rgb(221, 221, 221);
+}
+
+.white {
+    color: white;
+}
+
+/* header styling */
+header .navbar{
+    font-family: 'Bangers', cursive;
+    padding-bottom: 0;
+}
+
+/*  Main styling */
+main {
+    height: calc(100vh - 107px);
+}
+
+.card {
+    box-shadow: 2px 2px #888888;
+}
+
+.fas {
+    font-size: 40px;
+}
