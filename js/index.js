@@ -1,11 +1,12 @@
 const cardElement = document.querySelector("#card-display .row");
+const selectElement = document.querySelector(".header_form select");
 
 const printCards = (array, element) => {
     let auxString = "";
     array.forEach((item, index) => {
-        // const offsetProperty = index % 5 == 0 ? "offset-md-1" : ""; //*Metto direttamente una proprietà w-20 per ottenere 5 colonne, invece di usare offset
+        const offsetProperty = index % 5 == 0 ? "offset-md-1" : "";
         auxString += `
-        <div class="w-20 gy-3">
+        <div class="col-2 ${offsetProperty} gy-3">
             <div class="card">
                 <div class="card-body text-center">
                     <i class="${item.family} ${item.prefix}${item.name} color-${item.type}"></i>
@@ -19,3 +20,14 @@ const printCards = (array, element) => {
     element.innerHTML = auxString;
 };
 printCards(icons, cardElement);
+
+selectElement.addEventListener("change", () => {
+    if (selectElement.value === "all") {
+        printCards(icons, cardElement); 
+    } else {
+        let auxArray = icons.filter((item) => {
+            return selectElement.value === item.type
+        })
+        printCards(auxArray, cardElement);
+    }
+})
