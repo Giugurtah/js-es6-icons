@@ -1,6 +1,7 @@
 // Elementi connessi all'html
 const cardElement = document.querySelector("#card-display .row");
 const selectElement = document.querySelector(".header_form select");
+const searchElement = document.getElementById("text_search")
 
 //Funzione di stampa carte
 const printCards = (array, element) => {
@@ -41,7 +42,6 @@ const printOptions = (array, element) => {
     });
     //Sull'array ausiliario ciclo in modo tale da ottenere una stringa con un option per ogni diverso type nel array ausiliario
     let auxString = auxArray.reduce((currentValue, item) => {
-        console.log(currentValue);
         return currentValue + `<option value="${item}">${item.charAt(0).toUpperCase() + item.slice(1)}</option>`
     }, auxInitialValue);
     element.innerHTML = auxString;
@@ -60,4 +60,12 @@ selectElement.addEventListener("change", () => {
         })
         printCards(auxArray, cardElement);
     }
+})
+
+
+searchElement.addEventListener("keyup", () => {
+    let auxArray = icons.filter((item) => {
+        return item.name.includes(searchElement.value)
+    })
+    printCards(auxArray, cardElement);
 })

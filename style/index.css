@@ -41,7 +41,7 @@ header .navbar{
 
 /*  Main styling */
 main {
-    height: calc(100vh - 107px);
+    min-height: calc(100vh - 107px);
 }
 
 .card {
